@@ -3,6 +3,8 @@ package com.startup.compose.template.di
 import android.content.Context
 
 import androidx.datastore.preferences.preferencesDataStore
+import com.startup.compose.template.datastore.ISharedPrefDataStore
+import com.startup.compose.template.datastore.SharedPrefDataStore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

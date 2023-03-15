@@ -51,4 +51,8 @@ class SharedPrefDataStore @Inject constructor(
     object PreferenceKeys {
         val USER_KEY = stringPreferencesKey("USER_KEY")
     }
+
+    companion object {
+        const val USER_PREFS = "user_prefs"
+    }
 }

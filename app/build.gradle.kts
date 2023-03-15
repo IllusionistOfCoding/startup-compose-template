@@ -36,6 +36,7 @@ android {
             dimension = "version"
             versionNameSuffix = "-dev"
             applicationId = AppConfiguration.application_id
+            buildConfigField("String", "BASE_URL", "\"https://startup-compose-example/api/\"")
             resValue("string",  "app_name", "DEV-${AppConfiguration.application_name}")
         }
 
@@ -43,12 +44,14 @@ android {
             dimension = "version"
             versionNameSuffix = "-stag"
             applicationId = AppConfiguration.application_id
+            buildConfigField("String", "BASE_URL", "\"https://startup-compose-example/api/\"")
             resValue("string",  "app_name", "STAG-${AppConfiguration.application_name}")
         }
 
         create("prod") {
             dimension = "version"
             applicationId = AppConfiguration.application_id
+            buildConfigField("String", "BASE_URL", "\"https://startup-compose-example/api/\"")
             resValue("string",  "app_name", AppConfiguration.application_name)
         }
     }

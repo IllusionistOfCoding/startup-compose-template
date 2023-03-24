@@ -15,24 +15,23 @@ check(rootProject.name == name) {
 
 tasks.register("templateCleanup") {
     doLast {
-        val repository = System.getenv("GITHUB_REPOSITORY")
-            ?: error("No GITHUB_REPOSITORY environment variable. Are you running from Github Actions?")
-
-        val (owner, name) = repository.split("/").let {
-            it[0].sanitized() to it[1].sanitized()
-        }
+        val (name, packageName) = "android-pillo" to "com.android.pillo"
 
         file("settings.gradle.kts").replace(
-            "rootProject.name = (\"starup-compose-template\")",
+            "rootProject.name = (\"StartupComposeTemplate\")",
             "rootProject.name = (\"$name\")"
         )
         file("buildSrc/src/main/java/AppConfiguration.kt").replace(
             "com.startup.compose.template",
-            "com.github.$owner.$name"
+            packageName
+        )
+        file("buildSrc/src/main/java/AppConfiguration.kt").replace(
+            "StartupComposeTemplate",
+            name
         )
 
-        patchReadme(repository, name)
-        changePackageName(owner, name)
+//        patchReadme(repository, name)
+        changePackageName(packageName, name)
 
         // cleanup the cleanup :)
         file(".github/template-cleanup").deleteRecursively()

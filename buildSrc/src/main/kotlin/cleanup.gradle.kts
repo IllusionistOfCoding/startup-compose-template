@@ -82,11 +82,12 @@ fun changePackageName(packageName: String) {
             it.replace("com.startup.compose.template", packageName)
         }
     }
+    val dirPackage = packageName.replace(".", "/")
     srcDirectories().forEach {
         it.listFiles()!!.filter { it.isDirectory } // down to src/main
             .flatMap { it.listFiles()!!.filter { it.isDirectory } } // down to src/main/java
             .forEach {
-                val newDir = File(it, packageName)
+                val newDir = File(it, dirPackage)
                 newDir.parentFile.mkdirs()
                 File(it, "com/startup/compose/template").renameTo(newDir)
                 File(it, "com/startup").deleteRecursively()

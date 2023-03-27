@@ -1,3 +1,7 @@
+plugins {
+    cleanup
+}
+
 buildscript {
     repositories {
         google()

@@ -15,7 +15,7 @@ check(rootProject.name == name) {
 
 tasks.register("templateCleanup") {
     doLast {
-        val (name, packageName) = "android-pillo" to "com.android.pillo"
+        val (name, packageName) = "replace_name_project" to "com.replace.package.project"
 
         file("settings.gradle.kts").replace(
             "rootProject.name = (\"StartupComposeTemplate\")",
@@ -31,7 +31,7 @@ tasks.register("templateCleanup") {
         )
 
 //        patchReadme(repository, name)
-        changePackageName(packageName, name)
+        changePackageName(packageName)
 
         // cleanup the cleanup :)
         file(".github/template-cleanup").deleteRecursively()
@@ -74,19 +74,19 @@ fun srcDirectories() = projectDir.listFiles()!!
     .filter { it.isDirectory && !(it.name == "buildSrc") }
     .flatMap { it.listFiles()!!.filter { it.isDirectory && it.name == "src" } }
 
-fun changePackageName(owner: String, name: String) {
+fun changePackageName(packageName: String) {
     srcDirectories().forEach {
         it.walk().filter {
             it.isFile && (it.extension == "kt" || it.extension == "kts" || it.extension == "xml")
         }.forEach {
-            it.replace("com.startup.compose.template", "com.github.$owner.$name")
+            it.replace("com.startup.compose.template", packageName)
         }
     }
     srcDirectories().forEach {
         it.listFiles()!!.filter { it.isDirectory } // down to src/main
             .flatMap { it.listFiles()!!.filter { it.isDirectory } } // down to src/main/java
             .forEach {
-                val newDir = File(it, "com/github/$owner/$name")
+                val newDir = File(it, packageName)
                 newDir.parentFile.mkdirs()
                 File(it, "com/startup/compose/template").renameTo(newDir)
                 File(it, "com/startup").deleteRecursively()

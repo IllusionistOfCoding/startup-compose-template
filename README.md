@@ -5,10 +5,10 @@ A simple Github template that lets you create an **Android/Kotlin** project and 
 ## How to use 👣
 
 Just click on [![Use this template](https://img.shields.io/badge/-Use%20this%20template-brightgreen)](https://github.com/DualBit/it-android-jetpack-template/generate) button to create a new repo starting from this template.
-
-- Creo la repo.
-- Clono la repo.
-- Disabilito la spunta su experimental
+Steps to run:
+- Create a new repository on Github by clicking on [![Use this template](https://img.shields.io/badge/-Use%20this%20template-brightgreen)](https://github.com/DualBit/it-android-jetpack-template/generate) button.
+- Clone the new project.
+- On Android Studio: Settings -> Experimental -> remove the flag "Only include test tasks in the Gradle task list generated during Gradle Sync".
 - sostituisco i campi projectName e packagename in template-cleanup.gradle.kts
 - build il progetto
 - lancio lo script template-cleanup

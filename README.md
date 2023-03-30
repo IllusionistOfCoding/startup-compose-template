@@ -15,6 +15,10 @@ Steps to run:
 - sync project with gradle files
 - ed finito 
 
+<p align="center">
+<img src="screenshots/screenshot_0.png" width="80%"/>
+</p>
+
 Once created don't forget to update the:
 - [App ID](buildSrc/src/main/java/Coordinates.kt)
 - AndroidManifest ([here](app/src/main/AndroidManifest.xml) and [here](library-android/src/main/AndroidManifest.xml))

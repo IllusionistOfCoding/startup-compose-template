@@ -1,7 +1,3 @@
-import com.sun.jndi.toolkit.url.Uri
-import org.apache.groovy.nio.extensions.NioExtensions.deleteDir
-import java.nio.file.Paths
-
 /**
  * A plugin to cleanup the template after it has been forked. It register a single `templateCleanup`
  * task that is designed to run from CI. It:
@@ -35,7 +31,6 @@ tasks.register("templateCleanup") {
             ""
         )
         file("buildSrc/src/main/kotlin/cleanup.gradle.kts").delete()
-        //deleteDir(Paths.get("screenshots/"))
         file("screenshots/").deleteRecursively()
     }
 }

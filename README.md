@@ -23,11 +23,6 @@ Steps to run:
 - Reload the Gradle project by clicking on File -> "Sync Project with gradle Files"
 - Build and run the project.
 
-Once created don't forget to update the:
-- [App ID](buildSrc/src/main/java/Coordinates.kt)
-- AndroidManifest ([here](app/src/main/AndroidManifest.xml))
-- Package of the source files
-
 ## Features 🎨
 
 - **100% Kotlin-only template**.

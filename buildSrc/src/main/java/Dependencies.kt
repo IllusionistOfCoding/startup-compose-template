@@ -1,19 +1,20 @@
 object Versions {
-    const val compose = "1.3.3"
-    const val compose_compiler = "1.4.2"
-    const val compose_navigation = "2.5.1"
-    const val compose_hilt_navigation = "1.0.0"
-
     const val kotlin = "1.8.10"
     const val hilt = "2.44"
     const val gradle = "7.4.1"
 
     const val activity = "1.6.1"
 
+    const val compose = "1.3.3"
+    const val compose_compiler = "1.4.2"
+    const val compose_navigation = "2.5.1"
+    const val compose_hilt_navigation = "1.0.0"
+
     const val room = "2.4.3"
     const val pager = "0.13.0"
-
     const val firebase = "2.4.3"
+    const val retrofit = "2.8.1"
+    const val lifecycle = "2.5.1"
 }
 
 object Sdk {
@@ -30,8 +31,8 @@ object CoreLibs {
 }
 
 object LifecycleLibs {
-    const val runtime_ktx =             "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
-    const val viewmodel_ktx =           "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    const val runtime_ktx =             "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val viewmodel_ktx =           "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
     const val runtime_compose =         "androidx.lifecycle:lifecycle-runtime-compose:2.6.0-alpha03"
 }
 
@@ -56,10 +57,10 @@ object ComposeLibs {
     const val ui_tooling =              "androidx.compose.ui:ui-tooling:${Versions.compose}"
     const val ui_tooling_preview =      "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
     const val ui_test_junit4 =          "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
-    const val material3 =               "androidx.compose.material3:material3:1.0.1"
-    const val material3_window_size =   "androidx.compose.material3:material3-window-size-class:1.0.1"
     const val foundation =              "androidx.compose.foundation:foundation:1.3.1"
     const val material =                "androidx.compose.material:material:1.3.1"
+    const val material3 =               "androidx.compose.material3:material3:1.0.1"
+    const val material3_window_size =   "androidx.compose.material3:material3-window-size-class:1.0.1"
 }
 
 object HiltLibs {
@@ -71,8 +72,8 @@ object HiltLibs {
 }
 
 object RetrofitLibs {
-    const val retrofit =                "com.squareup.retrofit2:retrofit:2.8.1"
-    const val converter_gson =          "com.squareup.retrofit2:converter-gson:2.8.1"
+    const val retrofit =                "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val converter_gson =          "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val logging_interceptor =     "com.squareup.okhttp3:logging-interceptor:4.9.1"
 }
 

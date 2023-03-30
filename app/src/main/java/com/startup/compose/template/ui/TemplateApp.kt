@@ -4,10 +4,9 @@ import android.content.res.Resources
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.consumedWindowInsets
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarDuration
-import androidx.compose.material3.SnackbarHost
+import androidx.compose.material.Scaffold
+import androidx.compose.material.SnackbarDuration
+import androidx.compose.material.SnackbarHost
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ReadOnlyComposable
@@ -26,9 +25,8 @@ import com.startup.compose.template.ui.route.NavGraph
 
 
 @OptIn(
-    ExperimentalLifecycleComposeApi::class,
+    ExperimentalLifecycleComposeApi::class, ExperimentalComposeUiApi::class,
     ExperimentalLayoutApi::class,
-    ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class
 )
 @Composable
 fun TemplateApp(

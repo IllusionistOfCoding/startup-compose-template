@@ -16,7 +16,7 @@ Just click on [![Use this template](https://img.shields.io/badge/-Use%20this%20t
 - ed finito 
 
 <p align="center">
-<img src="screenshots/screenshot_0.png" width="30%"/>
+<img src="screenshots/screenshot_0.png" width="80%"/>
 </p>
 
 Once created don't forget to update the:

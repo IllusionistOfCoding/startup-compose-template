@@ -30,7 +30,6 @@ tasks.register("templateCleanup") {
         changePackageName(packageName)
 
         // cleanup the cleanup :)
-        file(".github/template-cleanup").deleteRecursively()
         file("build.gradle.kts").replace(
             "    cleanup\n",
             ""

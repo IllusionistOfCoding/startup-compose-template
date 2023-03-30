@@ -9,25 +9,17 @@
  * - cleanups after itself by removing the Github action and this plugin
  */
 
-check(rootProject.name == name) {
-    "The cleanup plugin should be applied to the root project and not $name"
-}
-
 tasks.register("templateCleanup") {
     doLast {
-        val (name, packageName) = "replace_name_project" to "com.replace.package.project"
+        val (project, packageName) = "replace_name_project" to "com.replace.package.project"
 
         file("settings.gradle.kts").replace(
             "rootProject.name = (\"StartupComposeTemplate\")",
-            "rootProject.name = (\"$name\")"
+            "rootProject.name = (\"$project\")"
         )
         file("buildSrc/src/main/java/AppConfiguration.kt").replace(
             "com.startup.compose.template",
             packageName
-        )
-        file("buildSrc/src/main/java/AppConfiguration.kt").replace(
-            "StartupComposeTemplate",
-            name
         )
 
 //        patchReadme(repository, name)
@@ -40,6 +32,7 @@ tasks.register("templateCleanup") {
             ""
         )
         file("buildSrc/src/main/kotlin/cleanup.gradle.kts").delete()
+        file("screenshots").delete()
     }
 }
 

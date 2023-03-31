@@ -7,6 +7,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.core.view.WindowCompat
+import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.startup.compose.template.manager.INetworkManager
 import com.startup.compose.template.ui.TemplateApp
@@ -38,9 +39,12 @@ class MainActivity : ComponentActivity() {
                 systemUiController.systemBarsDarkContentEnabled = !darkTheme
                 onDispose {}
             }
-            StartupComposeTemplateTheme {
-                TemplateApp(eventManager, networkMonitor)
+            ProvideWindowInsets {
+                StartupComposeTemplateTheme {
+                    TemplateApp(eventManager, networkMonitor)
+                }
             }
+
         }
     }
 }

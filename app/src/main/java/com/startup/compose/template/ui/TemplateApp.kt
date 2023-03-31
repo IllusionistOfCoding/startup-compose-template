@@ -1,12 +1,11 @@
 package com.startup.compose.template.ui
 
 import android.content.res.Resources
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.consumedWindowInsets
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarDuration
 import androidx.compose.material.SnackbarHost
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.ReadOnlyComposable
@@ -24,8 +23,7 @@ import com.startup.compose.template.ui.route.NavGraph
 
 
 @OptIn(
-    ExperimentalComposeUiApi::class,
-    ExperimentalLayoutApi::class,
+    ExperimentalComposeUiApi::class, ExperimentalLayoutApi::class,
 )
 @Composable
 fun TemplateApp(
@@ -35,8 +33,10 @@ fun TemplateApp(
     val appState =
         rememberAppState(networkMonitor = networkMonitor, eventManager = eventManager)
 
-
     Scaffold(
+        modifier = Modifier
+            .fillMaxSize()
+            .statusBarsPadding(),
         snackbarHost = { SnackbarHost(appState.snackbarHostState) },
     ) { padding ->
         val isOffline by appState.isOffline.collectAsStateWithLifecycle()
@@ -51,10 +51,11 @@ fun TemplateApp(
         NavGraph(
             modifier = Modifier
                 .padding(padding)
-                .consumedWindowInsets(padding),
+                .consumeWindowInsets(padding),
             navController = appState.navController,
         )
     }
+
 }
 
 @Composable

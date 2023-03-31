@@ -11,12 +11,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.startup.compose.template.ui.route.NavigationEvent
 import com.startup.compose.template.ui.theme.StartupComposeTemplateTheme
 
-@OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
@@ -42,7 +40,7 @@ fun HomeContent(
             .navigationBarsPadding()
             .fillMaxSize()
     ) { paddingValues ->
-        Box(
+        Column(
             modifier = Modifier
                 .padding(
                     bottom = paddingValues.calculateBottomPadding()

@@ -5,8 +5,8 @@ object Versions {
 
     const val activity = "1.6.1"
 
-    const val compose = "1.3.3"
-    const val compose_compiler = "1.4.2"
+    const val compose = "1.4.0"
+    const val compose_compiler = "1.4.4"
     const val compose_navigation = "2.5.1"
     const val compose_hilt_navigation = "1.0.0"
 
@@ -51,16 +51,17 @@ object CoroutinesLibs {
 }
 
 object ComposeLibs {
-    const val ui =                      "androidx.compose.ui:ui:${Versions.compose}"
     const val animation =               "androidx.compose.animation:animation:${Versions.compose}"
-    const val runtime =                 "androidx.compose.runtime:runtime:${Versions.compose}"
-    const val ui_tooling =              "androidx.compose.ui:ui-tooling:${Versions.compose}"
-    const val ui_tooling_preview =      "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
-    const val ui_test_junit4 =          "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
-    const val foundation =              "androidx.compose.foundation:foundation:1.3.1"
+    const val compiler =                "androidx.compose.compiler:compiler:${Versions.compose_compiler}"
+    const val foundation =              "androidx.compose.foundation:foundation:${Versions.compose}"
     const val material =                "androidx.compose.material:material:1.3.1"
     const val material3 =               "androidx.compose.material3:material3:1.0.1"
     const val material3_window_size =   "androidx.compose.material3:material3-window-size-class:1.0.1"
+    const val runtime =                 "androidx.compose.runtime:runtime:${Versions.compose}"
+    const val ui =                      "androidx.compose.ui:ui:${Versions.compose}"
+    const val ui_tooling =              "androidx.compose.ui:ui-tooling:${Versions.compose}"
+    const val ui_tooling_preview =      "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
+    const val ui_test_junit4 =          "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
 }
 
 object HiltLibs {

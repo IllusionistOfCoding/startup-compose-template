@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.startup.compose.template.R
 import com.startup.compose.template.manager.INetworkManager
@@ -25,7 +24,7 @@ import com.startup.compose.template.ui.route.NavGraph
 
 
 @OptIn(
-    ExperimentalLifecycleComposeApi::class, ExperimentalComposeUiApi::class,
+    ExperimentalComposeUiApi::class,
     ExperimentalLayoutApi::class,
 )
 @Composable

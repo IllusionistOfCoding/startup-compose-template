@@ -108,23 +108,16 @@ dependencies {
     implementation(RetrofitLibs.converter_gson)
     implementation(RetrofitLibs.logging_interceptor)
 
-    implementation(ComposeLibs.ui)
+    implementation(ComposeLibs.animation)
+    implementation(ComposeLibs.compiler)
     implementation(ComposeLibs.foundation)
+    implementation(ComposeLibs.material)
     implementation(ComposeLibs.runtime)
-
-    implementation(RoomLibs.room_runtime)
-    implementation(RoomLibs.room_ktx)
-    annotationProcessor(RoomLibs.room_compiler)
-    kapt(RoomLibs.room_compiler)
+    implementation(ComposeLibs.ui)
 
     implementation(DataStoreLibs.datastore_preferences)
 
-    implementation(PagingLibs.accompanist_pager)
-    implementation(PagingLibs.accompanist_pager_ind)
-
     implementation(SplashScreen.splashscreen)
-
-    implementation(PlayServicesLibs.auth)
 
     implementation(Coil.coil)
 

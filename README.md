@@ -34,6 +34,13 @@ Steps to run:
 
 This template is using [**Gradle Kotlin DSL**](https://docs.gradle.org/current/userguide/kotlin_dsl.html) as well as the [Plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block) to setup the build.
 
+## TODO 🔨
+
+- Add [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts)
+- Renaming [TemplateApp], [TemplateTheme] and [AppConfiguration, application_name] with [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts).
+- Add version template.
+- Populate readme documentation.
+
 ## Contributing 🤝
 
 Feel free to open a issue or submit a pull request for any bugs/improvements.

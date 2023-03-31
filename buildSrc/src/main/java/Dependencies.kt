@@ -1,7 +1,7 @@
 object Versions {
     const val kotlin = "1.8.10"
     const val hilt = "2.44"
-    const val gradle = "7.4.1"
+    const val gradle = "7.4.2"
 
     const val activity = "1.6.1"
 

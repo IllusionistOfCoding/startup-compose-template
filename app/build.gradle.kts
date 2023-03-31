@@ -109,8 +109,6 @@ dependencies {
     implementation(RetrofitLibs.logging_interceptor)
 
     implementation(ComposeLibs.ui)
-    implementation(ComposeLibs.material3)
-    implementation(ComposeLibs.material3_window_size)
     implementation(ComposeLibs.foundation)
     implementation(ComposeLibs.runtime)
 
@@ -125,14 +123,6 @@ dependencies {
     implementation(PagingLibs.accompanist_pager_ind)
 
     implementation(SplashScreen.splashscreen)
-
-    implementation(platform(FirebaseLibs.firebase_bom))
-    implementation(FirebaseLibs.analytics)
-    implementation(FirebaseLibs.crashlytics)
-    implementation(FirebaseLibs.auth)
-    implementation(FirebaseLibs.firestore)
-    implementation(FirebaseLibs.perf)
-    implementation(FirebaseLibs.config)
 
     implementation(PlayServicesLibs.auth)
 

@@ -1,7 +1,7 @@
 package com.startup.compose.template.ui
 
 import android.content.res.Resources
-import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember

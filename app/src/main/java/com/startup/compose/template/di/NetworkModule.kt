@@ -1,6 +1,5 @@
 package com.startup.compose.template.di
 
-import com.google.common.net.HttpHeaders
 import com.startup.compose.template.BuildConfig
 import com.startup.compose.template.datastore.ISharedPrefDataStore
 import dagger.Module
@@ -43,7 +42,7 @@ object NetworkModule {
                 val requestBuilder = it.request().newBuilder()
                 val user = runBlocking { dataStore.userDataStore.firstOrNull() }
                 user?.token?.let { token ->
-                    requestBuilder.header(HttpHeaders.AUTHORIZATION, token)
+                    requestBuilder.header("Authorization", token)
                 }
                 it.proceed(requestBuilder.build())
             }

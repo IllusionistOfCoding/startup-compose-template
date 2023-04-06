@@ -38,6 +38,7 @@ This template is using [**Gradle Kotlin DSL**](https://docs.gradle.org/current/u
 
 - <s>Add [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts).</s>
 - <s>Renaming [TemplateApp], [TemplateTheme] and [AppConfiguration, application_name] with [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts).</s>
+- Renaming [Theme.StartupComposeTemplate] in [manifest](app/src/main/AndroidManifest.xml) and in [themes](app/src/main/res/values/themes.xml).
 - Add version template.
 - Populate readme documentation.
 

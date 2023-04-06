@@ -23,6 +23,14 @@ Steps to run:
 - Reload the Gradle project by clicking on File -> "Sync Project with gradle Files"
 - Build and run the project.
 
+## TODO 🔨
+
+- <s>Add [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts).</s>
+- <s>Renaming [TemplateApp], [TemplateTheme] and [AppConfiguration, application_name] with [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts).</s>
+- Renaming [Theme.StartupComposeTemplate] in [manifest](app/src/main/AndroidManifest.xml) and in [themes](app/src/main/res/values/themes.xml).
+- Add version template.
+- Populate readme documentation.
+
 ## Features 🎨
 
 - **100% Kotlin-only template**.
@@ -33,14 +41,6 @@ Steps to run:
 ## Gradle Setup 🐘
 
 This template is using [**Gradle Kotlin DSL**](https://docs.gradle.org/current/userguide/kotlin_dsl.html) as well as the [Plugin DSL](https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block) to setup the build.
-
-## TODO 🔨
-
-- <s>Add [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts).</s>
-- <s>Renaming [TemplateApp], [TemplateTheme] and [AppConfiguration, application_name] with [name] in [cleanup.gradle.kts](buildSrc/src/main/kotlin/cleanup.gradle.kts).</s>
-- Renaming [Theme.StartupComposeTemplate] in [manifest](app/src/main/AndroidManifest.xml) and in [themes](app/src/main/res/values/themes.xml).
-- Add version template.
-- Populate readme documentation.
 
 ## Contributing 🤝
 

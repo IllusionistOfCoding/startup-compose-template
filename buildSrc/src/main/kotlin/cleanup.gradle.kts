@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.org.eclipse.jgit.util.FileUtils.rename
+
 /**
  * A plugin to cleanup the template after it has been forked. It register a single `templateCleanup`
  * task that is designed to run from CI. It:
@@ -11,17 +13,17 @@
 
 tasks.register("templateCleanup") {
     doLast {
-        val (project, packageName) = "replace_name_project" to "com.replace.package.project"
-
+        val (appName, project, packageName) = listOf(
+            "ReplaceAppName",
+            "replace_name_project",
+            "com.replace.package.project"
+        )
         file("settings.gradle.kts").replace(
             "rootProject.name = (\"StartupComposeTemplate\")",
             "rootProject.name = (\"$project\")"
         )
-        file("buildSrc/src/main/java/AppConfiguration.kt").replace(
-            "com.startup.compose.template",
-            packageName
-        )
-
+        renamingAppConfiguration(appName, packageName)
+        renamingComposableFile(appName)
         patchReadme()
         changePackageName(packageName)
 
@@ -80,4 +82,27 @@ fun changePackageName(packageName: String) {
                 File(it, "com/startup").deleteRecursively()
             }
     }
+}
+
+fun renamingComposableFile(appName: String) {
+    file("app/src/main/java/ui/TemplateApp.kt").replace(
+        "TemplateApp",
+        "${appName}App"
+    )
+    file("app/src/main/java/MainActivity.kt").replace(
+        "TemplateApp",
+        "${appName}App"
+    )
+    rename(file("app/src/main/java/ui/TemplateApp.kt"), file("app/src/main/java/ui/${appName}App.kt"))
+}
+
+fun renamingAppConfiguration(appName: String, packageName: String) {
+    file("buildSrc/src/main/java/AppConfiguration.kt").replace(
+        "ComposeTemplate",
+        appName
+    )
+    file("buildSrc/src/main/java/AppConfiguration.kt").replace(
+        "com.startup.compose.template",
+        packageName
+    )
 }

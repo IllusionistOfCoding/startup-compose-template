@@ -93,10 +93,23 @@ fun renamingComposableFile(appName: String) {
         "TemplateApp",
         "${appName}App"
     )
-    rename(
-        file("app/src/main/java/com/startup/compose/template/ui/TemplateApp.kt"),
-        file("app/src/main/java/com/startup/compose/template/ui/${appName}App.kt")
+    file("app/src/main/java/com/startup/compose/template/MainActivity.kt").replace(
+        "StartupComposeTemplateTheme",
+        "${appName}Theme"
     )
+    file("app/src/main/java/com/startup/compose/template/ui/theme/Theme.kt").replace(
+        "StartupComposeTemplateTheme",
+        "${appName}Theme"
+    )
+    file("app/src/main/java/com/startup/compose/template/ui/screen/home/HomeScreen.kt").replace(
+        "StartupComposeTemplateTheme",
+        "${appName}Theme"
+    )
+    srcDirectories().forEach {
+        it.walk().first {
+            it.name == "TemplateApp.kt" && it.extension == "kt"
+        }.renameTo(file("app/src/main/java/com/startup/compose/template/ui/${appName}App.kt"))
+    }
 }
 
 fun renamingAppConfiguration(appName: String, packageName: String) {

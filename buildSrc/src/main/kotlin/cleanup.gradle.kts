@@ -85,15 +85,18 @@ fun changePackageName(packageName: String) {
 }
 
 fun renamingComposableFile(appName: String) {
-    file("app/src/main/java/ui/TemplateApp.kt").replace(
+    file("app/src/main/java/com/startup/compose/template/ui/TemplateApp.kt").replace(
         "TemplateApp",
         "${appName}App"
     )
-    file("app/src/main/java/MainActivity.kt").replace(
+    file("app/src/main/java/com/startup/compose/template/MainActivity.kt").replace(
         "TemplateApp",
         "${appName}App"
     )
-    rename(file("app/src/main/java/ui/TemplateApp.kt"), file("app/src/main/java/ui/${appName}App.kt"))
+    rename(
+        file("app/src/main/java/com/startup/compose/template/ui/TemplateApp.kt"),
+        file("app/src/main/java/com/startup/compose/template/ui/${appName}App.kt")
+    )
 }
 
 fun renamingAppConfiguration(appName: String, packageName: String) {

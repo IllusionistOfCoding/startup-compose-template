@@ -19,8 +19,8 @@ tasks.register("templateCleanup") {
             "com.replace.package.project"
         )
         file("settings.gradle.kts").replace(
-            "rootProject.name = (\"StartupComposeTemplate\")",
-            "rootProject.name = (\"$project\")"
+            "StartupComposeTemplate",
+            project
         )
         renamingAppConfiguration(appName, packageName)
         renamingComposableFile(appName)
